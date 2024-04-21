@@ -1,12 +1,21 @@
-function SearchBar() {
+function SearchBar({ filterText, inStockOnly }) {
 
     return (
         <>
             <form>
-                <input type="text" name="search-bar" placeholder="Search..."/>
+                <input 
+                    type="text" 
+                    name="search-bar"
+                    value={filterText}
+                    placeholder="Search..."
+                />
                 <div>
                     <label>
-                        <input type="checkbox" name="in-stock" value="inStock" /> 
+                        <input 
+                            type="checkbox" 
+                            name="in-stock"
+                            checked={inStockOnly}
+                        /> 
                         {' '}
                         Only show products in stock
                     </label>
