@@ -1,4 +1,4 @@
-function SearchBar({ filterText, inStockOnly }) {
+function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) {
 
     return (
         <>
@@ -7,6 +7,7 @@ function SearchBar({ filterText, inStockOnly }) {
                     type="text" 
                     name="search-bar"
                     value={filterText}
+                    onChange={e => onFilterTextChange(e.target.value)}
                     placeholder="Search..."
                 />
                 <div>
@@ -14,6 +15,7 @@ function SearchBar({ filterText, inStockOnly }) {
                         <input 
                             type="checkbox" 
                             name="in-stock"
+                            onChange={e => onInStockOnlyChange(e.target.checked)}
                             checked={inStockOnly}
                         /> 
                         {' '}
